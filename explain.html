@@ -1,0 +1,104 @@
+Sure, let's break down the JavaScript code in a more straightforward way:
+
+1. **Initialization:**
+   ```javascript
+   let currentPlayer = 'X';
+   let board = [
+     ['', '', ''],
+     ['', '', ''],
+     ['', '', '']
+   ];
+   ```
+
+   This sets up the initial state of the game. `currentPlayer` keeps track of whose turn it is ('X' or 'O'), and `board` represents the game board with an array of arrays.
+
+2. **cellClick Function:**
+   ```javascript
+   function cellClick(row, col) {
+     if (board[row][col] === '') {
+       // If the clicked cell is empty
+       board[row][col] = currentPlayer;
+       document.getElementById('ticTacToe').rows[row].cells[col].innerText = currentPlayer;
+
+       if (checkWinner()) {
+         alert(`Player ${currentPlayer} wins!`);
+         resetBoard();
+       } else if (boardIsFull()) {
+         alert("It's a draw!");
+         resetBoard();
+       } else {
+         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+       }
+     }
+   }
+   ```
+
+
+
+   
+   This function gets called when a player clicks a cell in the table. It checks if the clicked cell is empty. If yes, it updates the board, displays the player's symbol in the clicked cell, checks if the current player wins or if it's a draw, and then switches to the next player.
+
+3. **checkWinner Function:**
+   ```javascript
+   function checkWinner() {
+     for (let i = 0; i < 3; i++) {
+       // Check rows and columns
+       if (
+         (board[i][0] === currentPlayer && board[i][1] === currentPlayer && board[i][2] === currentPlayer) ||
+         (board[0][i] === currentPlayer && board[1][i] === currentPlayer && board[2][i] === currentPlayer)
+       ) {
+         return true;
+       }
+     }
+
+     // Check diagonals
+     if (
+       (board[0][0] === currentPlayer && board[1][1] === currentPlayer && board[2][2] === currentPlayer) ||
+       (board[0][2] === currentPlayer && board[1][1] === currentPlayer && board[2][0] === currentPlayer)
+     ) {
+       return true;
+     }
+
+     return false;
+   }
+   ```
+
+   This function checks if the current player has won by examining the rows, columns, and diagonals of the game board.
+
+4. **boardIsFull Function:**
+   ```javascript
+   function boardIsFull() {
+     for (let i = 0; i < 3; i++) {
+       for (let j = 0; j < 3; j++) {
+         if (board[i][j] === '') {
+           return false;
+         }
+       }
+     }
+     return true;
+   }
+   ```
+
+   This function checks if the game board is full, indicating a draw.
+
+5. **resetBoard Function:**
+   ```javascript
+   function resetBoard() {
+     currentPlayer = 'X';
+     board = [
+       ['', '', ''],
+       ['', '', ''],
+       ['', '', '']
+     ];
+
+     // Clear the table cells
+     const cells = document.getElementById('ticTacToe').getElementsByTagName('th');
+     for (let i = 0; i < cells.length; i++) {
+       cells[i].innerText = '';
+     }
+   }
+   ```
+
+   This function resets the game to its initial state, clearing the board and setting the current player back to 'X'.
+
+In summary, the code implements a simple Tic Tac Toe game where two players take turns clicking on cells in a table, and the game checks for a winner or a draw after each move.

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAYS</title>
+</head>
+<body>
+    
+</body>
+<script>
+// ARRAYS ✔️
+let marks = [93,99,93,29,35,30,100];
+console.log(marks);
+console.log(marks.length);
+
+let name = ["atiq","atiqa ","haider"]
+name[1]='Ahill';
+console.log(name);
+console.log(name[2]);
+
+// arrays ki lenght ik + hoti hai end wali index
+// Looping over an Array ⭐
+for(let i = 0; i < name.length; i++){
+ console.log(name[i]);  
+}
+// for of ⭐
+for(let hero of name){
+    console.log(hero);
+}
+
+// Q
+let Marks = [98.6,97,100,99.4,99.8]
+let sum = 0;
+for(let val of Marks){
+sum +=val;    
+}
+console.log(sum)
+let results = sum / Marks.length;
+console.log(results);
+
+let price = [250,645,300.900,50]
+
+// let i = 0;
+// for(let value of price){
+// let offer = value / 10;
+// price[i] = price[i] - offer;
+// console.log(price[i]);
+// i++;
+// };
+for(let i = 0; i < price.length; i++){
+let offer = price[i] / 10;    
+price[i]-= offer;
+};
+console.log(price);
+
+// ARRAY METHODS ⭐
+let names = ["oxygen", "nitrogen","carbon dioxde","patassium"]
+// push(): add to end 
+names.push("xenon", "krypton");
+console.log(names);
+// pop():delete from end & return 
+console.log(names.pop());
+// to string(): converts arrays to string 
+console.log(names.toString());
+// CONCAT():JOINS MULTIPLE ARRAYS & RETURN RESULT
+console.log(names.concat(price));
+// unshift(): add to start 
+console.log(names.unshift("kamal"));
+// shift : delete to start& return
+console.log(names.shift());
+
+// Slice(); return a peice of the arrays
+console.log(names.slice(1,2));
+// SPLICE change orignal array (add, remove ,replace);
+names.splice(2,1,"hamad",'amal');
+names.splice(1,0,"hamad",'amal');
+// Q
+let Company = ['bloomberg','microsoft','uber','google','ibm',"netflix"];
+console.log(Company.shift())
+Company.splice(1,1,"ola");
+Company.push("amazon");
+</script>
+</html>

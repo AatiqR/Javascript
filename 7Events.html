@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS IN JS </title>
+    <style>
+    .box{
+      width: 89px; 
+      height: 40px; 
+      border: 1px solid black;
+      background-color: aqua;
+    }
+    </style>
+</head>
+<body>
+<!-- all event ki bari mai parhni ki liye MDN EVENT REFRENCE MAI JAU  -->
+<!-- INLINE EVENT HANDLING ⭐ -->
+    <button id="clicked">click me ! </button>
+    <!-- <button onclick="alert('click');console.log('click')">click me ! </button> -->
+    <button ondblclick="alert('click');console.log('click')">click me 2! </button>
+    <!-- <div onmouseover="console.log('mouse is over on box')" class="box">26 nov 2023</div> -->
+    <div class="box">26 nov 2023</div>
+
+    <button class="toggle">toggle</button>
+</body>
+<script>
+// Event in js ✔️ agr hum inline or js mai sath code likhe to js wala chali ga 
+let btn = document.querySelector("#clicked");
+btn.onmouseout = ()=>{
+console.log("clicked is on btn ")    
+}
+
+let box = document.querySelector('.box');
+// EVENT OBJECT
+// e object jo hume detail dite hai event ki 
+// box.onmouseout = (e)=>{
+//   console.log(e)
+//   console.log(e.type);
+//   console.log(e.target);
+//   console.log(e.clickX, e.clickY);
+// console.log("mouse")
+// }
+// EVENT LISTERNER ⭐
+box.addEventListener("click",(e)=>{
+ console.log("my name is Atiq");
+})
+let hh = () => {
+ console.log("my name is Atiq2");
+}
+
+box.addEventListener("click", hh);
+// remove 
+box.removeEventListener("click",hh);
+
+let body = document.querySelector("body")
+let toggle = document.querySelector(".toggle");
+let mode = "light";
+toggle.addEventListener("click",()=>{
+  if(mode === "light"){
+    mode = "dark"
+    body.style.backgroundColor = "black";
+  }else{
+    mode = 'light';
+    body.style.backgroundColor = "white";
+  // body.classList.add("class");
+  }
+  console.log(mode);
+})
+</script>
+</html>

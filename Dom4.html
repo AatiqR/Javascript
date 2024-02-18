@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+html, body{
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+.main{
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+    position: relative;
+}
+.elem{
+height: 120px;
+width: 100%;
+border-bottom: 3px solid white;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+position: relative;
+
+}
+.elem h1 {
+  font-size: 6vw;
+  position: relative;
+  z-index: 9;
+
+}
+.elem img{
+height: 120px;
+width: 150px;
+object-fit: cover;
+object-position: center;
+border-radius: 50%;
+position: absolute;
+/* transform: translate(-50%, -50%); */
+opacity: 0;
+transition: all linear 0.3s;
+}
+    </style>
+</head>
+<body>
+  <div class="main">
+    <div id="elem1" class="elem">
+      <h1>Oppenheimer</h1>
+      <img src="https://images.unsplash.com/photo-1682686578456-69ae00b0ecbd?auto=
+      format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    </div>
+    <div class="elem">
+    <h1>Barbie</h1>
+    <img src="https://images.unsplash.com/photo-1678042956036-6147cdcc8541?auto=format&fit=crop&q=6
+    0&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFiYXIlMjBhemFtfGVufDB8fDB8fHww" alt="">
+    </div>
+
+    <div class="elem">
+      <h1>Babar</h1>
+      <img src="https://images.unsplash.com/photo-1698303715502-2ae80fb90af5?
+      auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWw
+      tZmVlZHw5fHx8ZW58MHx8fHx8" alt="">
+    </div>
+
+    <div class="elem">
+      <h1>rizwan</h1>
+     <img src="https://images.unsplash.com/photo-1698395001541-61699d032061?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8" alt="">
+    </div>
+
+  </div>  
+</body> 
+<script>
+
+var e =document.querySelectorAll(".elem")
+
+
+e.forEach(function(val){
+
+  val.addEventListener("mouseenter", function(){
+// val.style.backgroundColor = "red"
+val.childNodes[3].style.opacity = 1
+  }); 
+  val.addEventListener("mouseleave", function(){
+    // val.style.backgroundColor = "transparent"
+  val.childNodes[3].style.opacity = 0
+});
+
+val.addEventListener("mousemove", function(dets){
+val.childNodes[3].style.left = dets.x+"px"
+val.childNodes[3].style.top = dets.y+"px"
+});
+});
+// var eI = document.querySelector("#elem1 img")
+
+// e1.addEventListener("mousemove",function(dets){
+// eI.style.left = dets.x+"px"
+// eI.style.top = dets.y+"px"
+// })
+
+// e1.addEventListener("mouseenter",function(dets){
+// eI.style.opacity = 1 ;
+// })
+
+// e1.addEventListener("mouseleave",function(dets){
+// eI.style.opacity = 0 ;
+// })
+</script>
+</html>

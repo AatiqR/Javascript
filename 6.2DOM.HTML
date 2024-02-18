@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM PART 2 </title>
+    <style type="text/Css">
+div{
+    height: 48px;
+    width: 45px;
+    border: 2px solid black;
+    background-color: antiquewhite;
+}
+.par{
+    font-size: 39px;
+    color: blue;
+    
+}
+.cont{
+    background-color: black;
+}
+    </style>
+</head>
+<body>
+<div class="box"> j</div>   
+<p>is the world war 2</p> 
+<p class="par">power </p>
+</body>
+
+<script>
+// DOM PART 2 ✔️
+let div = document.querySelector("div");
+let cla = div.getAttribute("class");
+// to get the attr value 
+console.log(cla)
+
+let classs = div.setAttribute("class","dabba"); //to set the attr val th
+
+console.log("classs")
+
+// NODE 
+div.style.backgroundColor="aqua"
+div.style.width="89px"
+
+// INSERT ELEMENT ⭐
+let newb = document.createElement("button")
+newb.innerText = "404";
+// div.append(newb);//add to the end (inside)
+// div.prepend(newb);//adds to the start (inside)
+// div.before(newb);//adds before the node (outside)
+// div.after(newb);//adds after the node (outside)
+
+// Delete Element⭐
+let p = document.querySelector("p")
+p.remove(); // remove the node
+// HOMEWORK 
+// appendchild();
+// removechild();
+
+// classlist 
+// classlist new class add or remove karni
+// Q 
+let btn = document.createElement("button");
+btn.innerText = 'click me '
+btn.style.backgroundColor = "red"; 
+btn.style.color= "white" ;
+document.querySelector("body").prepend(btn);
+
+// Q 
+let pp = document.querySelector(".par")
+pp.classList.add("cont");
+
+</script>
+</html>

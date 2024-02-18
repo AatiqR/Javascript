@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style >
+
+body{
+    background-color: black;
+}
+
+.box {
+    height: 440px;
+    width: 300px;
+    background-color: wheat;
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 40px;
+}
+.box img{
+    height: 50%;
+    width: 100%;
+    object-fit: fill ;
+    object-position: center;
+    border-radius: 20px;
+ }
+
+.box h1{
+    font-size: 28px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 10px 0;
+}
+.box h5 {
+    font-size: 25px;
+    color: red;
+    margin: 20px;
+}
+.box button{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+}
+/* .box .remove{
+    background-color: black;
+    color: white;
+} */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="biryani poster project jpeg.jpg" alt="">
+  <h1 class="biryani">Biryani</h1>
+  <h5 class="stranger">Proced</h5>
+  <div class="btn-container">
+    <!-- <button class="remove">Remove</button> -->
+    <button class="add">Order</button>
+  </div>
+    </div>
+</body>
+<script>
+var add =document.querySelector(".add");
+var stranger = document.querySelector(".stranger")
+var check = 0
+// var remove =document.querySelector(".remove");
+
+// Add Friend
+add.addEventListener('click',function(){
+    if(check == 0){
+stranger.innerHTML = 'Proced'
+stranger.style.color = 'green';
+add.innerHTML = 'Remover'
+check = 1
+}
+else{
+    stranger.innerHTML = 'Order'
+stranger.style.color = 'red';
+add.innerHTML = 'order'
+check = 0
+}
+
+
+})
+
+
+// REMOVE
+// remove.addEventListener('click',function(){
+// stranger.innerHTML = "Stranger"
+// stranger.style.color = 'Red';
+
+// })
+
+
+</script>
+</html>

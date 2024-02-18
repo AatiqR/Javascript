@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> LOOPS & STRINGS </title>
+</head>
+<body>
+    
+</body>
+<script>
+// LOOPS IN JS ✔️
+// code ko again again and run karni ki liye
+
+// FOR LOOP ⭐
+        // initializer   stoping  update          
+// for(let num=0;       num<100;   num++){
+// console.log(num)
+// }
+
+let sum = 0;
+for(let i = 1; i<=10; i++){
+  sum = sum + i ;  
+}
+console.log(sum)
+
+
+// INFINITE LOOP ⭐
+// NHI CHALANA 
+
+
+// WHILE LOOP ⭐
+let i = 0;
+while(i<=100){
+console.log("AR");
+i++;
+}
+
+// DO WHILE LOOP ⭐
+let j = 0;
+do {
+console.log(j);
+j++;
+} while(j<= 3);
+
+// FOR OF LOOP ⭐
+// is use for string and arrays 
+let str = "my name is Ahill Butt";
+let size = 0;
+for(let i of str){
+  console.log(i);
+  size++;
+}
+console.log("string size = ",size );
+
+// for in loops in js ⭐ 
+let  student = {
+name : "Shubh " ,
+age : 20 ,
+cgpa: 9.3,
+Pass : true 
+}
+for (let i in student){
+  console.log(i,student[i]);
+}
+
+// PRACTICE 
+// Q
+// for(let b=0; b<=100; b+=2){
+//   console.log(b);
+// }
+// // Q
+// let game = 5;
+// let pro = prompt("Guess the number ");
+// while(pro != game){
+//  pro = prompt("Guess the number again ");
+
+// }
+// console.log("congrualations");
+
+
+// STRINGS ✔️
+// length kaise napi 
+let write = "fox jump throught the cat "
+console.log(write.length);
+console.log(write[12]);
+
+// TEMPLATES LITERALS ⭐
+  let sales = {
+    profit :3933,
+    product : "pencils"
+  };
+  let out = `this is the profit of my business ${sales.product}`;
+  console.log(out);
+// string interplotion ${}
+console.log("Saiffiullah\nNazir");
+console.log("Saiffiullah  \t  Nazir");
+
+// STRINGS METHODS ⭐
+let s = "  aatiq rana "
+let f = "RANA Asif shahzad"
+console.log(s.toUpperCase());
+console.log(s.toLowerCase());
+console.log(s.toLocaleUpperCase());
+
+console.log(s.trim()); // romove karta hai sentence start honi ka pehli ka gap ;
+
+console.log(s.slice(1,6)) //jaha si lekar jaha tak likhwana hai waha tak lekh do 
+
+console.log(s.concat(f)); // strings ko join karna 
+
+console.log(f.replace("Asif", "Amir")) //word ko replace karna ho 
+
+console.log(s.charAt(9)) //index of place pata karna ho 
+
+Q
+let p = prompt("enter your name");
+let result = p.length;
+let R = "@" + p + result ;
+console.log(R);
+</script>
+</html>

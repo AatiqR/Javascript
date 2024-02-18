@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.center{
+width: 60%; 
+height: 60%; 
+position: absolute; 
+top: 50% ; left: 50%;
+transform: translate(-50%, -50%);
+overflow: hidden;
+}
+.imagediv{
+position: absolute;   
+width: 100px; 
+height: 170px;
+overflow: hidden;
+}
+.imagediv img{
+    transform:translateY(100%) ;
+width: 100%; 
+height: 100%;
+object-fit: cover;   
+
+}
+</style>
+<body>
+ <div class="center">
+
+ </div>   
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+// var center = document.querySelector('.center')
+// .addEventListener("mousemove", function(dets){
+// console.log(dets.clientX, dets.clientY);
+// })
+
+const btn=document.querySelector("#throttle");
+     
+// Throttling Function
+const throttleFunction=(func, delay)=>{
+
+// Previously called time of the function
+let prev = 0; 
+return (...args) => {
+    // Current called time of the function
+    let now = new Date().getTime(); 
+
+    // Logging the difference between previously 
+    // called and current called timings
+    console.log(now-prev, delay); 
+    
+    // If difference is greater than delay call
+    // the function again.
+    if(now - prev> delay){ 
+    prev = now;
+
+    // "..." is the spread operator here 
+    // returning the function with the 
+    // array of arguments
+    return func(...args);  
+    }
+}
+}
+document.querySelector(".center")
+.addEventListener("mousemove", throttleFunction((dets)=>{
+var div = document.createElement("div");
+div.classList.add('imagediv');
+div.style.left = dets.clientX+"px";
+div.style.top = dets.clientY+"px";
+
+var img = document.createElement("img");
+img.setAttribute("src", "https://images.unsplash.com/photo-1698953050617-20c468bc988f?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D")
+div.appendChild(img);
+document.body.appendChild(div);
+
+gsap.to(img, {
+    y: "0",
+    ease: Power1,
+    duration: .6
+
+})
+gsap.to(img, {
+    y: "100%",
+delay: .6,
+    ease: Power2,
+});
+setTimeout(function(){
+div.remove();    
+}, 1000)
+}, 500));
+ </script>
+
+</script>
+</html>
+
+throttling ✅
+kisi  particular code ke no of exections ko kam kardena
+

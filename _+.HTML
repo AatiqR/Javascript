@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+table{
+border-collapse: collapse;
+margin: 20px;
+}   
+table, th, td{
+ border: 5px solid black;   
+}
+th, td{
+width: 100px;
+height: 100px;
+text-align: center;
+font-size: 29px;
+}
+th{
+color: aqua;
+}
+
+</style>
+<body>
+<table class="ticTacToe">
+<tr>
+<th onclick="cellClick(0,0)"></th>
+<th onclick="cellClick(0,1)"></th>
+<th onclick="cellClick(0,2)"></th>
+</tr>
+<tr>
+<th onclick="cellClick(1,0)"></th>
+<th onclick="cellClick(1,1)"></th>
+<th onclick="cellClick(1,2)"></th>
+</tr>
+<tr>
+<th onclick="cellClick(2,0)"></th>
+<th onclick="cellClick(2,1)"></th>
+<th onclick="cellClick(2,2)"></th>
+</tr>
+
+</table>    
+</body>
+<script>
+let tic = document.querySelector(".ticTacToe")
+let player = "X";  
+let board = [
+[ '', '', ''],   
+[ '', '', ''],   
+[ '', '', '']   
+];
+function cellClick(row, col){
+if(board[row][col] === ''){
+board[row][col] = player; 
+tic.rows[row].cells[col].innerText = player;
+
+if(win()){
+alert(`${player} win the game`);
+reset();
+}
+else if (full()){
+alert("draw the game try again")  
+reset()  
+}
+else{
+player = player === 'X' ? 'O' : 'X';  
+}}}
+
+function win() {
+    for (let i = 0; i < 3; i++) {
+      // Check rows and columns
+if (
+(board[i][0] === player && board[i][1] === player && board[i][2] === player) ||
+(board[0][i] === player && board[1][i] === player && board[2][i] === player)
+) {
+return true;
+}
+}
+
+// Check diagonals
+if (
+(board[0][0] === player && board[1][1] === player && board[2][2] === player) ||
+(board[0][2] === player && board[1][1] === player && board[2][0] === player)
+) {
+return true;
+}
+
+return false;
+}
+
+
+function full() {
+for (let i = 0; i < 3; i++) {
+for (let j = 0; j < 3; j++) {
+if (board[i][j] === '') {
+    return false;
+}
+}
+}
+return true;
+}
+
+function reset() {
+currentPlayer = 'X';
+board = [
+['', '', ''],
+['', '', ''],
+['', '', '']
+];
+
+// Clear the table cells
+const cells = document.getElementById('ticTacToe').getElementsByTagName('th');
+for (let i = 0; i < cells.length; i++) {
+    cells[i].innerText = '';
+}
+}
+</script>
+</script>
+</html>

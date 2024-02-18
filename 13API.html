@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p class="fact"></p>
+<button class="button">Fact</button>
+</body>
+<script>
+// Fetch 
+// fetch mean khichna or yeh method hai data receiver karna or send karna 
+// it uses request and response object 
+let url = "https://catfact.ninja/fact";
+let fact = document.querySelector(".fact")
+let btn = document.querySelector('.button')
+let get = async () => {
+    console.log("getting Data");
+    let response = await fetch(url);
+   console.log(response.status) //json format hai or yeh js obj like hota par isko change karna hota hai 
+let data = await response.json();
+console.log(data)
+fact.innerHTML = data.fact;
+}
+btn.addEventListener('click', get)
+
+</script>
+</html>

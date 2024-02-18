@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+html,  body{
+    height: 100%;
+    width: 100%;
+}   
+body{
+background-color: lightblue;  
+}   
+.container{
+height: 400px;
+width: 300px; 
+border-radius: 30px;   
+background-color: red;
+position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    margin: auto;
+    overflow: hidden;
+} 
+.container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.container i{
+    color: white;
+    font-size: 90px;
+    position: absolute;
+    top: 50%; 
+     left: 50%; 
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.8;
+    transition: all ease 0.5s;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="biryani poster project jpeg.jpg" alt="">
+    <i class="ri-heart-3-fill"></i>
+
+    </div>
+</body>
+<script>
+var con = document.querySelector(".container");
+var heart = document.querySelector("i")
+
+con.addEventListener("dblclick",function(){
+    heart.style.transform = "translate(-50%, -50%) scale(1)";
+    setTimeout(function(){
+    heart.style.transform = "translate(-50%, -50%) scale(0)";
+
+    },800);
+})
+
+setTimeout(() => {
+    
+}, timeout);
+</script>
+</html>

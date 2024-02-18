@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+<body>
+  <h2 class="hh">hello javascript</h2>
+  <!-- <div>
+    <ul>
+      <li>hp </li>
+      <li>dell</li>
+      <li>lenevo</li>
+    </ul>
+  </div>
+
+  <h1  id="h2" class="h">
+  </h1>   -->
+  <div class="box">first div</div>
+  <div class="box">first div</div>
+  <div class="box">first div</div>
+</body>
+<script>
+document.getElementById("vvvh2")
+document.getElementsByClassName("h")
+let div = document.getElementsByTagName("div");
+
+document.querySelector("p") //one elem
+// jo bhi choose karna ho to yeh use kari 
+document.querySelectorAll("p") // multiple elem
+
+// TAGNAME ⭐
+// return tag for element nodes 
+// Tagname si hum elem ka tag name pata kar sakte hai 
+
+// innerhtml ⭐
+// return the text content of the element and all its children
+let ind =document.querySelector("div");
+console.dir(ind);
+// innerText ⭐
+
+// text content ⭐
+
+
+// Q 
+let h2 =document.querySelector(".hh");
+h2.innerText = h2.innerText + " from apna college students"
+
+let divs = document.querySelectorAll(".box");
+let idx = 1;
+for(div of divs){
+  div.innerText = `number ${idx}`;
+  idx++;
+}
+// divs[0].innerText = "dill deewana hai";
+</script>
+</html>

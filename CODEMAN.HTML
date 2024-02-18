@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <h2>master class</h2>
+</div>
+</body>
+<script>
+let elem = 'is a brand'
+document.querySelector('div').append(elem)
+// append prepend elem move karte hai 
+// document.querySelector('div').insertAdjacentHTML("beforebegin",elem)
+
+// insert karna ho to kuch insertAdjacentHTML 👌
+
+// CREATION OF Element💕
+let create = document.createElement('h6')
+create.textContent ='nz out from world cup'
+document.querySelector('div').append(create)
+
+
+// CLONENODE si dom copy karsakti hai 
+document.querySelector('h6').cloneNode(true)
+
+
+</script>
+</html>

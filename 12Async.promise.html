@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+</body>
+<script>
+// SYNC IN JS 
+// line by line code chalta hai 
+
+// ASyNC IN JS 
+// sync nhi chalta us mai ulta hai agi pechi chalta hai
+function hello(){
+console.log("Hello");
+}
+setTimeout(hello, 5000);
+
+// callBack 
+function sum(a,b){
+console.log(a-b);
+}
+function cal(a,b, sumcallback){
+sumcallback(a,b);
+}
+cal(299,93,sum)
+
+// Callback Hell
+// jis ko hum sahi samajh na paye 
+function getData(dataid, getn){
+setTimeout(()=>{
+console.log("data", dataid);
+if(getn){
+getn();
+}
+}, 3000)}
+getData(1,() => {
+getData(2,() => {
+getData(3,() => {
+getData(4);
+} );
+})
+})
+// Promises
+// yeh eventual hota hai aur ya resolve ya complete hota hai or yeh hai ik object solution of callback hell 
+
+let promise = new Promise((resolve, reject) =>{
+console.log("Promise")
+// resolve('its done');
+reject("lkkk")
+})
+
+const getpromsie = () => {
+return new Promise((resolve, reject) => {
+console.log("i am a promise");
+resolve("success");
+});
+let Promise = getpromsie();
+promise.then(() => {
+console.log("just")
+})
+}
+// Promise Chain
+function asyncfunc(){
+return new Promise((resolve, reject) =>{
+setTimeout(() =>{
+console.log("some data")
+resolve("success");
+},4000)
+})
+}
+console.log("fetch")
+let p1 = asyncfunc();
+p1.then((res) =>{
+
+})
+
+// Async await 
+// Async func hammesha promise return karta hai 
+function api() {
+return new promise((resolve, reject )=>{
+setTimeout(()=>{
+console.log("weather data")
+resolve("200")
+}, 2000)
+});
+}
+async function getweather(){
+await api();
+await api();
+}
+
+(async function(){
+await api();
+await api();
+})();
+
+async function hello(){
+console.log("hello");
+}
+
+
+// await ko sirf async mai use hota or 
+</script>
+</html>

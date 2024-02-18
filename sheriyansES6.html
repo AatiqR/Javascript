@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+
+</style>    
+</head>
+<body>
+    
+
+</body>
+<!-- ES6 JAVASCRIPT  -->
+<script>
+// LET AND CONSTANT ✔️
+// VALUE  store dono si hoti let mai change hosakta hai or first time VALUE dena zaroori nhi const change nhi hota aur or value dena lazim hai
+// dono mai kuch simalarties hai 
+// similar in few thing 
+// dono es6 se hai 
+// window Object main add nhi karti hai 
+// both are braces scope hai
+// {
+//     let a = 49;
+// }
+//  console.log(a)
+
+
+// ARROW Function  ⭐🔰
+// Purani js mein teen taike ki function thi 
+// function statement
+// function expression
+// anonymous function
+
+// ARROW function
+// new js mein 1 tarike ka function hai jiske teen faces hai
+// basic fat arrow func
+var fun =  ()=>{};
+
+// fat arrow fnc with one parameter
+var j = mm =>{};
+j(3650);
+// // arrow fn with implicit return
+var u = ()=>483;
+console.log(u());
+
+// TEMPLATE LITERALS BACKTICK ` `  🔰
+// YEH ziayada code ki liye istamal hota hai jab sirf inko ik sentence mai likhna ho 
+// console.log(`hey ${383-494} and the `)
+
+// DEFAULT PARAMETER ⭐
+function abcd(prm='hello'){
+console.log(prm);
+}
+abcd(123);
+abcd();
+
+function ter(a=989,b=4994,c=49484){
+ console.log(a,b,c);
+}
+ter();
+
+
+// ... REST AND SPREAD 🙏
+// yeh alag work karte hai diff context mai 
+let a = [3,3,39,3,2,2,2]
+let x = [...a];
+// SPREAD elem ke all value ko us jagah par alag kar dite
+
+// spread use hota hai copy ya fir us location par kisi values bikherne ki liye
+// REST use hota hai jab apko bache hoi values ek variable mei dalni ho ... wo parameter dina hota hai
+
+function abcd(a,...b){
+console.log(a, b);
+}
+abcd(243,344,343,43,244,90404,94894994,);
+
+//  DESTRUCTRING : array and obj si data bahar nikalna in variables 🐱‍🏍🦧🐫
+var z = [1,2,3];
+var [b,,i] = z;
+console.log(b,i);
+var obj = {name: "Aatiq", age: 16};
+var {age} = obj;
+
+
+// PROMISES
+// promises 3 situation hoti hai pending reject or resolve?
+var ans = new Promise((res, rej)=>{
+    if(false){
+        return res();
+    }
+    else{
+        return rej();
+    }
+})
+ans
+.then(function(){
+    console.log("yes")
+})
+.catch(function(){
+ console.log("Not")   
+})
+
+// user will ask for a number between 0 ,9 and if the number is below 5 resolve if not reject
+var ans = new Promise((res, rej) => {
+var n = Math.floor(Math.random() * 10);
+if (n < 5){
+    return res();
+}    
+else{
+    return rej();
+}
+ })
+ans.then(function(){
+    console.log("below");
+})
+.catch(function(){
+    console.log('above');
+})
+
+
+// promises mai yeh yaad rakho ki jab aisi chaloa to p1 ki then p2 ki then p3 is tarah yeh cycle chalta hai 
+var ah = new Promise(function(res, rej){
+return res("school si ghar aoa")    
+})
+var p2 = ah.then(function (data) {
+console.log(data);    
+return new Promise(function(res, rej){
+return res("Eat a lunch and take a rest ");    
+})
+})
+
+var p3 = p2.then(function(data){
+console.log(data)   
+return new Promise(function(res, rej){
+return res("start study for 2 hours");  
+})
+})
+p3.then(function(data){
+console.log(data);
+})
+
+
+// ASYNC AWAIT 🐱‍🏍
+// fun mai async code likha ho ,async mai promise ka use karsakte ho jab ans aye to then lagana parta hai IS then ko na lagani ki liye 
+// async await ka use kar sakte  hai 
+
+
+async function aba(){
+   let raw = await fetch(`https://randomuser.me/api/`);
+ let ans = await raw.json();
+ console.log(ans);
+}
+// koi code async hai to apko uske liye wait karna padta hai kyoki humein nhi pata uska ans kab ayeaga 
+
+// TRY CATCH 👌
+console.log("hey");
+try{
+console.log(hey);
+}
+catch(err){
+    console.log(err);
+}
+console.log("hey");
+</script>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Classes OBJECT </title>
+</head>
+<style>
+
+</style>
+<body>
+
+</body>
+<script>
+let student = {
+name : "Aamir",
+Pace : 140,
+speed : function(){
+console.log("speed =", this.Pace)//student.pace
+}
+}
+// PROTOTYPE  
+// js Object mai khas property hoti hai usi prototype kahti 
+let employe = {
+caltax1 (){
+console.log("10%")
+},
+caltax2: function (){
+console.log("50%")
+}
+};
+
+let ahil = {
+salary: 32000,
+};
+ahil.__proto__ = employe;
+// jab bhi kisi prototype ya object mai same method hota hai object method use hota hai 
+
+// CLASSES ✔️
+// yeh hami temlate ko ziyada amount use karni ki kaam ati
+// ismi var or function hoti hai 
+class Audi {
+// Constructor hota method par banta func hai
+constructor(brand,speed){
+console.log("creating new object")
+this.brand = brand;
+this.speed = speed;
+}
+start(){
+console.log("start");
+}
+// , use nhi hota ismei 
+stop(){
+console.log("stop");
+}
+
+// this matlab wahi 
+};
+// kisi bhi class si object create karna 
+let A7 = new Audi(Audi,373);
+console.log(A7)
+// jab hami same template multiple thing create karte 
+
+// INHERITANCE ✔️
+// parent si child mai transfer karna 
+class parent{
+hello(){
+console.log("hello");
+}}
+class child extends parent {}
+let of = new child();
+
+// jab dono mai same hoga to child wala chalega = METHOD OVERRIDING
+// SUPER  
+class person{
+constructor(){
+this.color = 'White';
+}
+eat(){
+console.log("eat");
+}
+sleep(){
+console.log("sleep")
+}}
+
+class monkey extends person{
+constructor(nasal){
+super(); //to invoke paret class constructor
+this.nasal = nasal;
+}
+
+jump(){
+console.log("jump")
+}
+}
+let diff = new monkey("chipanzi");
+
+// QUESTION 
+class User {
+constructor(name, email){
+this.name = name;
+this.email = email;
+}
+view(){
+console.log('data = ', 'data is not for user')
+}
+}
+
+class Admin extends User{
+constructor(name, email){
+super(name,email);
+}
+edit(){
+Data = ' some'
+}
+}
+let s = new User('ee',"eierj")
+let A = new Admin('eeddd',"eieddrj")
+
+// ERRON HANDLING 
+try{
+
+} catch(err){
+
+}
+</script>
+</html>

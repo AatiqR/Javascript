@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.main{
+height: 100%;   
+width: 100%; 
+}    
+.rectangle{
+height: 200px; 
+width: 400px;
+position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+border-radius: 90%; 
+background-color: cyan;
+}
+</style>
+<body class="main">
+<div class="rectangle">
+
+</div>   
+</body>
+<script>
+var M = document.querySelector(".main")
+var R = document.querySelector(".rectangle")
+
+M.addEventListener("mousemove",function(dets){
+ R.style.left = dets.x+"px" 
+ R.style.top = dets.y+"px" 
+})
+</script>
+</html>

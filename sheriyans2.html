@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // var let const 
+    /*
+difference between in var cons let
+var in es5 
+var function scoped hota hai
+var apne parent fnc mein kahi bhi use ho sakta hai
+var apni app add hota hai window object 
+
+ */
+
+var a = 9;
+
+ /*
+function abcd(){
+    for(let i = 1; i<12; i++){
+        console.log(i);
+    }
+    console.log(i);
+}
+abcd();
+*/
+
+/*
+let const in es6
+let braces scoped hota hai
+let const add nhi hota window 
+*/
+let b = 3;
+
+// Browser context Api
+/*
+fnc chalta hai to uski imaginary container bana liga jo ki teen hai
+ 1 variables 
+ 2 fnc inside that parent function
+ 3 lexical environment of that function : hamara fnc kin cheezo ko access karsakta hai or kin ko nhi
+*/
+
+// HOW TO COPY REFRENCE VALUE
+var a = [2,4,35,3,4];
+var bd = [...a];
+// Object
+// object copy karne ka tarika
+var obj = { NAME: 'kamal akram'};
+var copy = {...obj};
+
+
+
+// Truthly or falsy
+/*
+js mai kuch bi likho wo truethly for falsy ko belong karte
+
+falsy value = 0 false undefined null Nan document.all 
+truthy value = sab kuh likho do wo tuthy si hai falsey ki value ko chor kar
+*/
+
+// if('aatiq'){
+//     console.log('yes');
+// }
+// else{
+//     console.log('no');
+// }
+
+// SWITch
+// switch(3){
+//      case 1:
+//      break; 
+
+//      case 2:
+//      break;
+     
+//     default
+// }
+
+// FOREACH FORIN  DO-WHILE 
+
+// FOREACH
+// Foreach : {loop jo array ki liye use hota  hai } froEach ka matlab har ik ki liye hai
+// argumeent mai val dite hai chahe to kuch or bhi di sakti hai 
+
+// forEach temporay changes karta hai array mai nhi karata
+// var a = [1,2,3,432,22,42,29]
+
+// a.forEach(function(val){
+//     console.log(val+38+393-39*2/869*87);
+// })
+
+
+// FORIN
+// FORIN Object ki liye istamal hota hai 
+// var school = {
+//     Name : 'Master Class',
+//     campus : 393,
+//     years : 23,
+// }
+
+// for(var key in school) {
+//     console.log(key, school[key]);
+// }
+
+// DO-WHILE LOOP
+// ise case jis ik bar kuch karna hai us ki bad conditionn chech karne ho 
+// var a = 39;
+// do {
+//     console.log('yes');
+//     a++;
+// }
+// while(a < 393)
+
+
+// Calback Function
+// jo code bad mai chalta hai aap likhoge , kyuki js ko nhi pata hota hai wo 
+// complete code complete hota hai js ko btaya jata ki complete hogaya hai  usko hum Callback Function
+
+// JO CODE KAAM COMPLETE PAR CHALTA HAI AUR FNC NORMAL HOTA USE HUM CALLBACK FUNCTION KEHTE HAI
+// // CALLBACK FUNCTION
+// setTimeout(function (){
+//     console.log('agaye hai hum');
+// }, 10000);
+
+
+// FIRST CLASS FUNCTION 
+// fnc ko as value treat karna hai 
+
+//  function aatiq(a) { 
+//   a();
+//  }
+// aatiq(function(){console.log('helloe');});
+
+// HOW ARRAYS ARE MADE BEHIND THE SCENES
+// ye pata lagani ka tarika hai
+
+
+// Array.isArray([]) true
+// Array.isArray({}) false
+
+// var arr = [3,3,22,32];
+// a[-3] = 9;
+
+// HOW TO DELETE OBJECT IN PROP
+var a = {
+    name : 'atiq' 
+}
+delete a.name
+</script>
+</html>

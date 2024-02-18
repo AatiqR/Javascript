@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button>click</button> 
+</body>
+<script>
+// HIGH ORDER FUNCTION ✅
+// func jo accept karle apne paramarater mai ek aur func ya phir wo return karde ek aur fnc
+// function wk(value){
+
+// }
+// wk(function(){});
+
+// arr.array.forEach(function(){
+    
+// });
+
+
+// // CONSTRUCTOR FUNCTION ✅
+// // Same properties wale ho aur us fnc bar bar phir use karna ho
+// // chahe to paramater deker change karsakte ho 
+// function briyani(){
+// this.Rice = "1kg";
+// this.Chicken = "1kg";
+// this.biryanimasala = "1Packet";
+// }
+// let b1 = new briyani();
+// let b2 = new briyani();
+// let b3 = new briyani();
+
+// // normal fnc jismein this ka istemaal ho aur fnc call karte waqt new keyword ka use ho 
+
+// // FIRST CLASS FUNCTION ✅
+// // jo has a value or vaprr  treat hoskti ho 
+// var a = {
+// function(){
+// }
+// }
+
+// // NEW KEYWORD ✅
+// // jab bhi new lagta hai hamesha ek blank object apne man mein bana lo 
+// function aj(){
+//     this.year = 23;
+// }
+// new abcd()
+// {
+//     year: 23;
+// }
+
+// // IIFE ✅
+// // func ko forun use karne ki liye isi  si koi private var bana sakti  
+// var ans = (function(){
+//     var privateval = 12;
+
+//     return {
+//         getter: function(){
+//             console.log(privateval);
+//         }, 
+//         setter: function(val){
+//       privateval = val;
+//         }
+
+//     }
+// })()
+
+// PROTOTYPE ✅
+// prototype rakhte properties methods jo help karte hai hamari jo bani banaye hoti hai 
+
+// PROTOTYPE INHERITANCE  ✅
+// jo apko geneticaly mile usi hum inheritance yeh cheez ja mai bhi hosakti hai prototype ki help si one extra property hami hamisha milty
+// hai js ki har obj mai  
+// var human = {
+//     eyes : true,
+//     mouth : true,
+//     canrun : true,
+//     canfly : false,
+// }
+// var coder = {
+//     expertinJS : true,
+//     problemsolving : true,
+// };
+// coder.__proto__= human;
+
+
+// THIS
+// jab likho usmein check karo ki usmi koi bhi functionm Object ya fir scope bana hai {}
+
+// jab bhi koi cheej {} brackets ke andar nahi hoti to hum use global scope kahte hai 
+
+// var a = 12; //GLOBAL SCOPE
+// console.log(this); global scope mai window deta
+
+ // local scope 
+// function abcd(){
+//     var a = 2;
+//     console.log(this);
+// }
+
+// abcd();
+
+
+//  METHOD 
+// EK FUNCTION JO OBJECT KE ANDAR HO, USE METHOD KAHTE
+// var jarvo = {
+//     name : 'aatiq',
+//     baatkaro: function(){
+//         console.log(this)
+//     }
+// }
+// jarvo.baatkaro();
+
+// GLOBAL : Window
+// FUNCTION : WINDOW 
+// METHOD : OBJ = IN any method, 'this ' keyword always refers to parents Object
+// var button = document.querySelector('button');
+// button.addEventListener('click', function(){
+//     console.log(this);
+// })
+
+// CALL APPLY BIND 
+// FNC ya obj tumhe use karan hai aur by defaul jo this ki value window hai use window naa rakh kar point karan hai kisi object ki taraf 
+
+// function abcd(date){
+// console.log(this.age);
+// }
+// var age = { age : 32}]
+
+// // call
+
+// abcd.call(age,29)
+// // APPLY
+// abcd.apply(age, [93])
+
+// BIND 
+// function binder(){
+// console.log(this);
+// }
+// var obj1  = { age : 32}
+
+// var bindfnc = binder.bind(obj1);
+// bindfnc();
+
+// PURE  IMPURE FUNC
+// function fnc(val){
+//     return Math.random()-val
+// }
+
+// var ans1 = fnc(2);
+// var ans2 = fnc(2);
+
+function pure(a,b){
+    return a*b;
+}
+var ans1 = pure(2,9);
+var ans2 = pure(2,9);
+</script>
+</html>

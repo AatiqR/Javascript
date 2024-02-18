@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css" >
+    #bulb{
+height: 300px;
+width: 300px;
+border-radius: 50%;
+border: 4px solid black;
+background-color: aqua;
+position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+}
+
+    .button{
+        padding: 10px 10px ;
+        border-radius: 30px ;
+        background-color: black;
+        color: rgb(255, 255, 255);
+        font-size: 30px;
+        margin: 480px 580px;
+    }
+    </style>
+
+</head>
+<body>
+    <!-- <div id="bulb">
+
+    </div>
+    <button class="button">ON</button> -->
+
+    <h1 id="ha">hello hello  </h1>
+    <h1>hello ji hello </h1>
+    <h1>hello hello </h1>
+</body>
+<script>
+//  4 PILLAR OF DOM ✔️
+
+//  1 : Selection of an Element✔️
+
+// var obj = document.querySelector("h1");
+// console.log(obj);
+
+// document yani html ka page or querySelector select karna
+
+
+//  2 : changing html✔️
+
+// html mai changes karne ki liya innerHTML ka istamal hota hai 
+// var obj = document.querySelector("h1").innerHTML = 'DOM'
+
+// obj.innerHTML = ('DOCUMENT OBJECT MODEL');
+
+
+// //  3 : changing css  ✔️
+
+// var obj = document.querySelector("h1");
+// obj.style.color = 'blue';
+// css change karne ki liye use hota hai style
+
+
+//  4 : Event Listener ✔️
+// var obj = document.querySelector("h1");
+// obj.addEventListener("click",function(){
+// obj.innerHTML = ' chal nikal'
+// a.style.color = 'cyan'
+// })
+
+
+
+// BULB ✔️
+// var aa =document.querySelector("#bulb");
+// var btn = document.querySelector(".button");
+
+// var flag = 0
+
+// btn.addEventListener('click',function(){
+
+//  if(flag == 0){ 
+//     document.querySelector(".button").innerHTML = ' OF  '
+// alert("TURN ON" );
+// aa.style.backgroundColor = "yellow";
+// console.log("clicocked")
+// flag = 1
+// }
+// else{
+// document.querySelector(".button").innerHTML = ' ON '
+// alert("TURN OFF" );
+// aa.style.backgroundColor = "transparent";
+// console.log("Again clieckdf")
+// flag = 0
+// }
+// })
+
+
+// MULTIPLE EVENTS LAGAI ✔️
+
+// ek sath ziyada sare tag select karni ki liye
+
+
+// var a = document.querySelectorAll('h1');
+
+// a.forEach(function(e){
+// console.log(e)
+// })
+
+// MULTIPLE SELECTOR
+// document.getElementById(box);
+// document.getElementsByClassName(button)
+
+// textCONTENT : JO BHI TEXT DO SELECT KARLETA 
+var box = document.querySelector("#ha")
+// box.textContent = "<h1> pakistan</h1>" yeh jo bhi likho vo ayga or
+box.innerHTML = "<h1> pakistan</h1>" // tag bhi work kary gai
+
+
+</script>
+</html>
